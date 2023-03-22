@@ -48,9 +48,20 @@ def reduce(dic, string):
 #############################################################################################
 
 #############################################################################################
-#Función que recibe dos listas,
+#Función auxiliar para carcula la media de las dos listas y pasarle la resultante a silhouette
 
-#def silhouette
+def media(lista1, lista2):
+    for i in range(len(lista1)):
+        
+
+
+#############################################################################################
+
+#############################################################################################
+#Función que recibe la lista calculada en la función media y devuelve una lista con el resultado
+
+#def silhouette(lista1, lista2):
+
 
 
 
@@ -80,7 +91,7 @@ dic={
 }
 string = "alcohol"
 
-#############################################################################################
+
 dic2, dic3 = split(dic)
 print(dic2)
 print(dic3)

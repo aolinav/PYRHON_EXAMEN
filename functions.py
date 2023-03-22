@@ -1,17 +1,22 @@
 
 
 #############################################################################################
-
 #############################################################################################
+""""
+Función que recibe un csv y dvuelve un diccionario
+"""""
+dic = winequality.csv
 
 #############################################################################################
 """"
 Función que recibe un diccionario y devulve dos disccionarios
-""""
+"""""
+dic2 = {}
 def split(dic):
     for key in dic:
-        if dic[type] == white:
-
+        if dic[type] == "white":
+            dic2 = dic[key]
+    return dic2
 
 
 

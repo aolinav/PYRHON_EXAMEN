@@ -1,3 +1,4 @@
+import functions
 
 dic={
 'dato1' : {'type': 'white',
@@ -24,13 +25,17 @@ dic={
 }
 string = "alcohol"
 
-#############################################################################################
-dic2, dic3 = split(dic)
+
+dic2, dic3 = functions.split(dic)
 print(dic2)
 print(dic3)
 
-lista = reduce(dic2, string)
-print(lista)
+lista1 = functions.reduce(dic2, string)
+print(lista1)
 
-lista2 = reduce(dic3, string)
+lista2 = functions.reduce(dic3, string)
 print(lista2)
+
+a, b = functions.media(lista1, lista2)
+print(a)
+print(b)

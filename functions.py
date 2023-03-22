@@ -1,5 +1,5 @@
 #############################################################################################
-import csv
+import math
 #############################################################################################
 
 #############################################################################################
@@ -52,9 +52,17 @@ def reduce(dic, string):
 
 def media(lista1, lista2):
     for i in range(len(lista1)):
-        
+        for j in range(len(lista1)):
+            if j != i or i != j:
+                potencia = math.pow(abs(i - j),2)
+                a = math.sqrt(potencia)
 
-
+    for i in range(len(lista2)):
+        for j in range(len(lista2)):
+            if j != i or i != j:
+                potencia = math.pow(abs(i - j),2)
+                b = math.sqrt(potencia)
+    return a,b
 #############################################################################################
 
 #############################################################################################
@@ -62,42 +70,4 @@ def media(lista1, lista2):
 
 #def silhouette(lista1, lista2):
 
-
-
-
 #############################################################################################
-dic={
-'dato1' : {'type': 'white',
-        'alcohol': '8.8',
-        'name': 'Lary'
-
-    },
-    'dato2' : {'type': 'white',
-        'alcohol': '9',
-        'name': 'Rabi'
-    },
-    'dato3' : {'type': 'red',
-        'alcohol': '3.3',
-        'name': 'Alex'
-    },
-    'dato4' : {'type': 'white',
-        'alcohol': '4',
-        'name': 'Rabi'
-    },
-    'dato5' : {'type': 'red',
-        'alcohol': '7.3',
-        'name': 'Alex'
-    }
-}
-string = "alcohol"
-
-
-dic2, dic3 = split(dic)
-print(dic2)
-print(dic3)
-
-lista = reduce(dic2, string)
-print(lista)
-
-lista2 = reduce(dic3, string)
-print(lista2)

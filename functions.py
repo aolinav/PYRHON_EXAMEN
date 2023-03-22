@@ -20,11 +20,16 @@ def split(dic):
     for key in dic:
         if dic[key]["type"] == "white":
             dic2[key] = dic[key]
-            dic2[key].pop("type")
+
     for key2 in dic:
         if dic[key2]["type"] == "red":
-            dic3[key] = dic[key2]
-            dic3[key].pop("type")
+            dic3[key2] = dic[key2]
+
+    for key3 in dic2:
+        dic2[key3].pop('type')
+
+    for key4 in dic3:
+        dic3[key4].pop('type')
 
     return dic2, dic3
 #############################################################################################
@@ -42,6 +47,14 @@ def reduce(dic, string):
     return lista
 #############################################################################################
 
+#############################################################################################
+#Función que recibe dos listas,
+
+#def silhouette
+
+
+
+#############################################################################################
 dic={
 'dato1' : {'type': 'white',
         'alcohol': '8.8',
@@ -55,13 +68,25 @@ dic={
     'dato3' : {'type': 'red',
         'alcohol': '3.3',
         'name': 'Alex'
+    },
+    'dato4' : {'type': 'white',
+        'alcohol': '4',
+        'name': 'Rabi'
+    },
+    'dato5' : {'type': 'red',
+        'alcohol': '7.3',
+        'name': 'Alex'
     }
 }
 string = "alcohol"
 
 #############################################################################################
 dic2, dic3 = split(dic)
+print(dic2)
 print(dic3)
 
 lista = reduce(dic2, string)
-#print(lista)
+print(lista)
+
+lista2 = reduce(dic3, string)
+print(lista2)

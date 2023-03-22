@@ -1,16 +1,17 @@
+#############################################################################################
+import csv
+#############################################################################################
+
+#############################################################################################
+#Función que recibe un csv y dvuelve un diccionario
+
+#def read_data(nomcsv):
 
 
 #############################################################################################
-#############################################################################################
-""""
-Función que recibe un csv y dvuelve un diccionario
-"""""
-dic = {}
 
 #############################################################################################
-""""
-Función que recibe un diccionario y devulve dos disccionarios
-"""""
+#Función que recibe un diccionario y devulve dos disccionarios
 
 def split(dic):
     dic2 = {}
@@ -18,42 +19,49 @@ def split(dic):
 
     for key in dic:
         if dic[key]["type"] == "white":
-            dic2 = dic[key]
-
+            dic2[key] = dic[key]
+            dic2[key].pop("type")
     for key2 in dic:
         if dic[key2]["type"] == "red":
-            dic3 = dic[key2]
+            dic3[key] = dic[key2]
+            dic3[key].pop("type")
+
     return dic2, dic3
-
 #############################################################################################
 
 #############################################################################################
-""""
-Función que recibe un diccionario y un string (atributo) y devulve una lista con los valores del atributo
-"""""
+#Función que recibe un diccionario y un string (atributo) y devulve una lista con los valores del atributo
+
 def reduce(dic, string):
     lista=[]
     for key in dic:
-        if dic[key][string] == True:
-            print(dic[key][string])
-            print("hola")
-
+        if dic[key][string]:
+            lista.append(dic[key][string])
+        else:
+            raise ValueError("No existe el atributo en el diccionario")
+    return lista
 #############################################################################################
 
 dic={
-1 : {'id': 1,
-        'success': True,
+'dato1' : {'type': 'white',
+        'alcohol': '8.8',
         'name': 'Lary'
+
     },
-    2 : {'id': 2,
-        'success': False,
+    'dato2' : {'type': 'white',
+        'alcohol': '9',
         'name': 'Rabi'
     },
-    3 : {'id': 3,
-        'success': False,
+    'dato3' : {'type': 'red',
+        'alcohol': '3.3',
         'name': 'Alex'
     }
 }
-string = "success"
+string = "alcohol"
 
-reduce(dic, string)
+#############################################################################################
+dic2, dic3 = split(dic)
+print(dic3)
+
+lista = reduce(dic2, string)
+#print(lista)
